@@ -1,0 +1,119 @@
+@mixin recomend {
+    background-color: #eee;
+    display: flex;
+    justify-content:space-between;
+   
+    width: max-content;
+    height: 40px;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #777;
+    gap: 10px;
+  }
+
+  .recomends {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 0;
+  gap: 15px;
+  
+  
+
+  
+
+
+
+  &__item {
+    @include recomend();
+    list-style: none;
+    position: relative;
+    width:140px;
+    height:100px;
+    background-color: rgb(255,255,255);
+    border-color: #ccc;    
+    &--name{
+      margin-right: 15px;
+      font-weight: 700;
+      font-size: large;
+      }
+    &--price{
+      font-size: large;
+      font-weight: 500;
+      }
+      
+  
+
+      
+  }
+  
+  &__new-ticker {
+    background-color: rgb(255,255,255);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: max-content;
+    height: 40px;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #777;
+    box-sizing: content-box;
+    gap: 10px;
+
+    &:hover {
+      background-color: #ccc;
+      border-color: transparent;
+    }
+
+    &:active {
+      transform: scale(1.05);
+    }
+  }
+
+  &__delete-ticker {
+    display: none;
+    position: absolute;
+    top: -12px;
+    right: -12px;
+    height: 20px;
+    width: 20px;
+    text-align: center;
+    padding: 0;
+    border: none;
+    background: none;
+    border-radius: 50%;
+    background-image: url("../../icons/cross-in-cloud.png");
+    background-size: cover;
+
+    &:hover {
+      border: 1px solid #777;
+    }
+
+    &:active {
+      border: none;
+      background-color: #777;
+      color:#a50e0e;
+    }
+  }
+
+  &__name {
+    padding-bottom: 5px;
+    text-align: center;
+    font-weight: bold;
+  }
+
+  &__price {
+    text-align: center;
+    color: #137333;
+    font-weight: bold;
+
+    &--down {
+      color: #a50e0e;
+    }
+  }
+
+  &__new-title {
+    height: 100%;
+  }
+
+}

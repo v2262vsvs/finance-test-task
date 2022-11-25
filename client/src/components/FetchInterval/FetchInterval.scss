@@ -1,0 +1,30 @@
+.interval-toggle {
+  position: absolute;
+  left: 5%;
+  top: 5%;
+  font-size: 1.2rem;
+  font-weight: bold;
+
+  &__form {
+    padding: 5px;
+    background-color: none;
+    border-radius: 10px;
+  }
+  &__label{
+    display: flex;
+  }
+
+  &__field {
+    width: 50px;
+    outline: none;
+    border:none;
+    font-style: italic;
+    font-size:xx-large;
+    color:#777;
+    margin-left: 30px;
+
+    &:focus {
+      border: 2px solid #444;
+    }
+  }
+}

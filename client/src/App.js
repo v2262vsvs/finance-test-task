@@ -1,25 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import './App.scss';
+import React, { useEffect } from 'react';
+import { Header } from './components/Header';
+import { InfoList } from './components/InfoList';
+import { startGettingTickers } from '../src/redux/tickersSlice';
+import { NewTickerRecomendation } from './components/NewTickerRecomendation';
+import { useDispatch, useSelector } from 'react-redux';
 
-function App() {
+ const App = () => {
+  const dispatch = useDispatch();
+  const [tickersLoaded, hasTickers] = useSelector((state) => (
+    [state.tickersLoaded, state.hasTickers]));
+
+  useEffect(() => {
+    dispatch(startGettingTickers());
+    // eslint-disable-next-line
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container">
+      <Header />
+      {tickersLoaded && hasTickers && <InfoList />}
+      <div className="footer">
+      <NewTickerRecomendation />
+      </div>
     </div>
   );
-}
+};
 
 export default App;

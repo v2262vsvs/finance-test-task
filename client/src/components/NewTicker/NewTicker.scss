@@ -1,0 +1,79 @@
+.new-ticker {
+  background-color: #eee;
+  display: flex;
+  justify-content: space-between;
+  height: 50px;
+  width: max-content;
+  padding: 5px 10px;
+  border-radius: 10px;
+  border: 1px solid #777;
+  gap: 10px;
+
+  &__form {
+    width: 100px;
+    margin: 0 auto;
+  }
+
+  &__label {
+    display: block;
+    margin: 0;
+    margin-bottom: 7px;
+  }
+
+  &__title {
+    text-align: center;
+    margin-bottom: 7px;
+  }
+
+  &__field {
+    display: block;
+    margin: 0 auto;
+    width: 70px;
+    height: 22px;
+    box-sizing: border-box;
+
+    &--error {
+      outline: 1px solid red;
+    }
+  }
+
+  &__button {
+    display: block;
+    width: 100px;
+    height: 22px;
+    margin: 0 auto 7px;
+    border-radius: 5px;
+    font-weight: bold;
+
+    background-color: #B1DDBE;
+
+    &:hover {
+      background-color: #74C28A;
+      border: none;
+    }
+
+    &:active {
+      background-color: #4682B4;
+    }
+
+    &--cancel {
+      &:hover {
+        border: none;
+        background-color: #B1DDBE;
+      }
+
+      &:active {
+        background-color: #FF4500;
+      }
+    }
+  }
+}
+
+.icon-new {
+  height: 40px;
+  width: 40px;
+  background-color:#e6f4ea;
+  border-radius: 50%;
+  background-image: url('../../icons/plusc.svg');
+  background-size: cover;
+}
